@@ -1,0 +1,253 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  scroll-behavior: smooth;
+}
+
+nav{
+  padding: 15px 15px;
+  background: #ffffff;
+}
+
+header{
+  border-bottom: 1px solid #dddcdc;
+}
+
+nav a {
+  color: #003360;
+  text-decoration: none; 
+}
+
+.menu,
+.submenu{
+    list-style: none;
+}
+
+.logo{
+    padding: 2vh 0;
+    width: 180px;
+}
+
+.logo_container{
+  position: relative;
+}
+
+.logo_container img {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.item{
+  font-weight: 600;
+}
+
+.item:not(.btn, .icon_section){
+    padding: 10px;
+}
+
+.item a:hover,
+.item a:hover::after{
+  color: #0188b3;
+}
+
+.menu{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.menu li:not(.btn) a{
+  display: block;
+  padding: 10px 5px;
+}
+
+.menu li.subitem a{
+  padding: 15px;
+}
+
+
+.nav_container_active{
+  display: block;
+}
+
+.nav_container_innactive{
+  display: none;
+}
+
+.icon_list{
+  display: inline-block;
+  list-style: none;
+}
+
+.item.icon_section{
+  order: 1;
+  float: right;
+}
+
+.toggle{
+  order: 2;
+}
+
+.item:not(.icon_section){
+  order: 3;
+  width: 100%;
+  text-align: center; 
+}
+
+
+.item.icon_section{
+  display: flex;  
+}
+
+.icon_container,
+.has_submenu{
+  position: relative;
+  padding: 0px 0px 0px 30px;
+}
+
+.icon{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.arrow_icon{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(160%, -50%);
+}
+
+.active .item {
+  display: block;
+}
+
+.submenu {
+  display: none;
+}
+
+.submenu_active .submenu{
+  display: block;
+}
+
+
+.hero-image{
+  padding: 0px;
+  margin: 0px auto;
+  height: 75vh;
+  width: 100%;
+  background-image: url(https://cdn.shopify.com/s/files/1/0456/6820/4706/files/banner3.png?v=1619017178);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+.hero-text {
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: x-large;
+  text-shadow: 1px 1px 5px black;
+  display: none;
+}
+
+.hero-text button{
+  margin-top: 18px;
+}
+
+button{
+  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+  Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  border-radius: 10px;
+  color: white;
+  background-color: #0188b3;
+  border: 4px solid #0188b3;
+  padding: 10px 30px;
+  transition: all 0.3s ease 0s;
+}
+
+button:hover {
+  background-color: #ffffff;
+  color: #0188b3;
+}
+
+.content{
+  min-height: 100vh;
+  width: 100%;
+}
+
+.collection{
+  text-align: center;
+  color: #003360;
+  padding: 60px 5%;
+}
+
+@media(min-width: 1120px){
+  nav{
+    padding: 0px 4%;
+  }
+  .menu{
+    display: flex;
+    flex-wrap: wrap;
+  }
+  ul{
+    display: inline-block;
+  }
+  .item.icon_section{
+    order: 3;
+    width: 15%;
+    justify-content: flex-end;
+  }
+  
+  .item:not(.icon_section){
+    order: 1;
+  }
+
+  .item:not(.icon_section){
+    order: 3;
+    width: initial;
+    text-align: center; 
+  }
+
+  .nav_container_active{
+    display: flex;
+    width: 60%;
+  }
+
+  .nav_container_innactive{
+    display: flex;
+    width: 60%;
+  }
+  
+  .menu_options{
+    display: none;
+  }
+
+  .logo{
+    width: 15%;
+  }
+  .logo_container,
+  .logo_container img{
+    width: 90%;
+  }
+  
+}

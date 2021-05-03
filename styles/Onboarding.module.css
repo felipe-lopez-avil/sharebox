@@ -1,0 +1,51 @@
+.column{
+    padding: 0px 30px;
+}
+
+.imageContainer img{
+    width: 100%;
+}
+
+.Onboarding{
+    margin-top: 10px;
+    text-align: center;
+}
+
+.Onboarding h2, 
+.Onboarding p{
+    color: #003360;
+}
+
+.Onboarding h2{
+    text-align: center;
+}
+
+.Onboarding p{
+    font-weight: 500;
+}
+
+.Onboarding button{
+    margin-top: 25px;
+    width: 100%;
+}
+
+@media (min-width: 475px) {
+    .row{
+        width: 80%;
+        display: flex;
+    }
+    .column{
+        width: 50%;
+        display: flex;
+        align-items: center;
+    }
+    .Onboarding{
+        text-align: left;
+    }
+    .Onboarding h2{
+        text-align: left;
+    }
+    .Onboarding button{
+        width: initial;
+    }
+}
