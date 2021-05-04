@@ -5,11 +5,11 @@ import SignIn from '../../components/SignIn/sign-in'
 
 const Login = () => {
     return (
-        <div>
-            <Layout>
+        <Layout>
+            <div className={styles.login_container}>
                 <SignIn/>
-            </Layout>
-        </div>
+            </div>
+        </Layout>
     )
 }
 
