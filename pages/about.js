@@ -1,5 +1,5 @@
 
-const about = () => {
+const account = () => {
     return (
         <div>
             <h1>About page</h1>
@@ -7,4 +7,4 @@ const about = () => {
     )
 }
 
-export default about
+export default account

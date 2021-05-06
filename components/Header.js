@@ -4,8 +4,10 @@ import PersonIcon from '@material-ui/icons/Person';
 import MenuIcon from '@material-ui/icons/Menu';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import CloseIcon from '@material-ui/icons/Close';
+import Link from 'next/link';
 
 import styles from '../styles/Header.module.css'
+
 
 
 
@@ -14,6 +16,8 @@ const Header = () => {
     const [click, setClick] = useState(false);
     const handleClick = () => setClick(!click);
     const closeMobileMenu = () => setClick(false);  
+
+    const user = false;
 
     return (
         
@@ -49,9 +53,20 @@ const Header = () => {
                             </a>
                         </div>
                         <div className="icon_container">
-                            <a href="#">
-                                <PersonIcon className="icon" style={{ fontSize: 30 }}/>
-                            </a>
+                            { user ? (
+                                <Link href={`/account`}>
+                                    <a>
+                                        <PersonIcon className="icon" style={{ fontSize: 30 }}/>
+                                    </a>
+                                </Link>
+                            ):(
+                                <Link href={`/cuenta/login`}>
+                                    <a>
+                                        <PersonIcon className="icon" style={{ fontSize: 30 }}/>
+                                    </a>
+                                </Link>
+                            )}
+                            
                         </div>
                         <div className="menu_options" onClick={handleClick}>
                             {click ? (
