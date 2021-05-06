@@ -10,10 +10,9 @@ import firebase from '../../firebase'
 
 // Validaciones
 import useValidation from '../../hooks/useValidation'
-import validateSignUp from '../../Validation/validateSignUp'
+import validateSignIn from '../../Validation/validateSignIn'
 
 const INITIAL_STATE = {
-    name: '',
     email: '',
     password: ''
 }
@@ -22,16 +21,17 @@ const SigIn = () => {
 
     const [error, setError] = useState(false)
 
-    const {values, errors, submitForm, handleSubmit, handleChange} = useValidation(INITIAL_STATE, validateSignUp, signUp);
+    const {values, errors, submitForm, handleSubmit, handleChange} = useValidation(INITIAL_STATE, validateSignIn, signIn);
 
-    const {name, email, password} = values;
+    const {email, password} = values;
 
-    async function signUp() {
+    async function signIn() {
         try {
-            await firebase.register(name, email, password);
+            const user = await firebase.login(email, password);
+            console.log(user);
             Router.push('/');
         } catch (error) {
-            console.error('Hubo un error. No se pudo crear tu cuenta', error.message);
+            console.error('Hubo un error. No se pudo iniciar sesión', error.message);
             setError(error.message)
         }
     }
