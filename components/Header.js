@@ -1,10 +1,11 @@
-import React, { useState }  from 'react'
+import React, { useState, useContext }  from 'react'
 import ShoppingBasketIcon from '@material-ui/icons/ShoppingBasket';
 import PersonIcon from '@material-ui/icons/Person';
 import MenuIcon from '@material-ui/icons/Menu';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import CloseIcon from '@material-ui/icons/Close';
 import Link from 'next/link';
+import { FirebaseContext } from '../firebase'
 
 import styles from '../styles/Header.module.css'
 
@@ -17,7 +18,7 @@ const Header = () => {
     const handleClick = () => setClick(!click);
     const closeMobileMenu = () => setClick(false);  
 
-    const user = false;
+    const { user, firebase } = useContext(FirebaseContext);
 
     return (
         
