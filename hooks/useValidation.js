@@ -4,12 +4,12 @@ import React, {useState, useEffect} from 'react'
 const useValidation = (initialState, validate, fn) => {
     
     const [values, setValues] = useState(initialState);
-    const [error, setError] = useState({});
+    const [errors, setError] = useState({});
     const [submitForm, setSubmitForm] = useState(false);
 
     useEffect(() => {
         if(submitForm) {
-            const noErrors = Object.keys(error).length === 0;
+            const noErrors = Object.keys(errors).length === 0;
 
             if(noErrors) {
                 fn();
@@ -17,7 +17,7 @@ const useValidation = (initialState, validate, fn) => {
 
             setSubmitForm(false);
         }
-    }, [error]);
+    }, [errors]);
 
     // Función que se ejecuta conforme el usuario escribe algo
     const handleChange = e => {
@@ -37,7 +37,7 @@ const useValidation = (initialState, validate, fn) => {
 
     return {
         values,
-        error,
+        errors,
         submitForm,
         handleSubmit,
         handleChange
